@@ -5,29 +5,26 @@ console.log(add(1, 2))
 const el = $('xxx')
 
 
-export var Bar: { a: Bar };
-export interface Bar {
-  count: number;
+function isNumber (val: unknown): asserts val is number {
 }
 
-class Foo {
-  x: number = 1;
-}
-// ... elsewhere ...
-interface Foo {
-  y: number;
-}
-declare let a: Foo;
-console.log(a.x + a.y)
+declare const x: never 
 
-type M = {
-  name: string
+function un(val: unknown) {
+  isNumber(val)
+
+  const x = val
 }
 
-namespace M {
-  export let age: number
+let s = {a: '1'} as const
+let a = [1, '2'] as const
+
+declare module 'my-lib' {
+  export const name: string
 }
 
-declare const m: M
+declare function p<T, K extends keyof T>(val: T, key: K): T[K]
+declare function p1<T>(val: T, key: keyof T): T[keyof T]
 
-m.name
+const r = p({a: '1', b: 2}, 'a')
+const r1 = p1({a: '1', b: 2}, 'a')
