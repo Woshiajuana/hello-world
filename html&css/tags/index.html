@@ -13,7 +13,11 @@
 
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="./index.css" />
-    <style></style>
+    <style>
+      body {
+        padding-bottom: 100px;
+      }
+    </style>
     <script src="./index.js"></script>
     <script src="./async-1.js" async></script>
     <script src="./async-2.js" async></script>
@@ -115,6 +119,7 @@
     </table>
 
     <hr />
+
     <form action="#/post" target="_self">
       <div>
         <label>姓名</label>
@@ -129,5 +134,48 @@
         <button type="submit">提交</button>
       </div>
     </form>
+
+    <hr />
+
+    <div>
+      <textarea placeholder="文本输入"></textarea>
+    </div>
+
+    <hr />
+
+    <div>
+      <select size="5">
+        <option>选项1</option>
+        <option>选项2</option>
+        <option>选项3</option>
+        <option>选项4</option>
+        <option>选项5</option>
+        <option>选项6</option>
+        <option>选项7</option>
+        <option>选项8</option>
+        <option>选项9</option>
+        <option>选项10</option>
+      </select>
+    </div>
+
+    <hr />
+
+    <div>
+      <input type="email" placeholder="email" />
+      <hr />
+      <input type="url" placeholder="url" />
+      <hr />
+      <input type="tel" placeholder="tel" />
+      <hr />
+      <input type="number" placeholder="number" />
+      <hr />
+      <input type="range" placeholder="range" />
+      <hr />
+      <input type="date" placeholder="date" />
+      <hr />
+      <input type="color" placeholder="color" />
+      <hr />
+      <input type="search" placeholder="search" />
+    </div>
   </body>
 </html>

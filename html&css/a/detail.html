@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>详情</title>
+  </head>
+  <body>
+    <p>1111</p>
+    <script>
+      if (opener) {
+        const prompt = opener.document.querySelector(".prompt");
+        prompt.innerHTML = "呵呵呵";
+        console.log("prompt => ", prompt);
+      }
+    </script>
+  </body>
+</html>
