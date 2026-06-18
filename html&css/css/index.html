@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS</title>
+    <style>
+      /* 伪类 */
+      a:link {
+        color: #ddd;
+      }
+      a:visited {
+        color: #ff0000;
+      }
+      a:hover {
+        color: blue;
+      }
+      a:active {
+        color: aqua;
+      }
+      input:focus {
+        outline: 1px solid #ff0000;
+      }
+      a:first-child {
+      }
+      a:last-child {
+      }
+      a:lang(zh) {
+      }
+
+      /* 伪元素 */
+      a::after {
+      }
+      a::before {
+      }
+      p::selection {
+        color: #00ff00;
+        background-color: #ddd;
+      }
+      p::first-letter {
+        font-size: 200%;
+      }
+      p:first-line {
+        text-transform: uppercase;
+      }
+
+      .float-wrap {
+        background-color: #dacdcd;
+        padding: 10px;
+
+        /* display: flow-root; */
+        /* overflow: hidden; */
+      }
+      .float-box {
+        width: 100px;
+        height: 100px;
+        float: left;
+      }
+      .float-box:nth-child(1) {
+        background-color: #ff0000;
+      }
+      .float-box:nth-child(2) {
+        background-color: blue;
+      }
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .border {
+        width: 0;
+        height: 0;
+        background-color: #999;
+        border-width: 50px;
+        border-style: solid;
+        border-top-color: #ff0000;
+        border-right-color: #00ff00;
+        border-bottom-color: #0000ff;
+        border-left-color: #000000;
+      }
+      .triangle {
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid red;
+      }
+
+      .box-wrap {
+        width: 100%;
+        background-color: #f2f2f2;
+        display: flex;
+        li {
+          list-style: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100px;
+          color: #fff;
+          /* flex: 1; => flex: 1 1 0%; */
+          flex: 1 1 0;
+          flex: 1 1 0%;
+          /* overflow: hidden; */
+          /* flex-shrink: 0; */
+          /* width: 0; */
+          &.box-1 {
+            background-color: #ff0000;
+          }
+          &.box-2 {
+            background-color: #00ff00;
+          }
+          &.box-3 {
+            background-color: #0000ff;
+          }
+        }
+      }
+      .box-seat {
+        width: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">链接</a>
+    <input type="text" />
+    <p>aaa块级元素的第一个字母</p>
+
+    <div class="float-wrap clearfix">
+      <div class="float-box"></div>
+      <div class="float-box"></div>
+    </div>
+
+    <section>
+      <h2>边框</h2>
+      <div class="border"></div>
+      <div class="triangle"></div>
+    </section>
+
+    <section>
+      <h2>flex布局</h2>
+      <ul class="box-wrap">
+        <li class="box-1">1</li>
+        <li class="box-2">
+          <div class="box-seat"></div>
+        </li>
+        <li class="box-3">3</li>
+      </ul>
+    </section>
+  </body>
+</html>

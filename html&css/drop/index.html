@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>拖拽</title>
+    <style>
+      [draggable="true"] {
+        background-color: red;
+      }
+      .source {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="source" draggable="true" ondragstart="drag(event)" id="source">
+      拖我
+    </div>
+    <div ondrop="onDrop(event)" ondragover="onDragover(event)" id="target">
+      放这里
+    </div>
+
+    <script>
+      function drag(ev) {
+        ev.dataTransfer.setData("text/plain", ev.target.id);
+        ev.dataTransfer.effectAllowed = "move";
+      }
+      function onDragover(ev) {
+        ev.preventDefault();
+      }
+      function onDrop(ev) {
+        ev.preventDefault();
+        const data = ev.dataTransfer.getData("text/plain");
+        const draggedEl = document.getElementById(data);
+        ev.target.appendChild(draggedEl);
+      }
+    </script>
+  </body>
+</html>
