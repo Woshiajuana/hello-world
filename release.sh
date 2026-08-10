@@ -2,8 +2,8 @@
 
 # ---------------------------------------------------------------------------
 # modify these config for the target project
-ServerAddress=root@124.220.64.70
-DeployDirectoryPath=/web/dev/cosmo
+ServerAddress=root@47.89.191.19
+DeployDirectoryPath=/web/www.cosmobounty.com
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------

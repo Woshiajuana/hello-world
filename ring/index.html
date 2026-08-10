@@ -74,6 +74,10 @@
         stroke-dashoffset: 0;
       }
 
+      .ring.is-empty .ring__bar {
+        stroke: transparent;
+      }
+
       .ring__value {
         position: absolute;
         inset: calc(var(--stroke) + 10px);
@@ -178,9 +182,11 @@
 
       function renderProgress(progress) {
         const displayProgress = Math.round(progress);
+        const visualProgress = displayProgress <= 0 ? 0 : progress;
 
-        ring.classList.toggle("is-full", progress >= 99.999);
-        ring.style.setProperty("--percent", progress.toFixed(3));
+        ring.classList.toggle("is-full", visualProgress >= 99.999);
+        ring.classList.toggle("is-empty", visualProgress <= 0);
+        ring.style.setProperty("--percent", visualProgress.toFixed(3));
 
         if (displayProgress !== displayedProgress) {
           displayedProgress = displayProgress;
